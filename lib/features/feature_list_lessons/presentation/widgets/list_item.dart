@@ -51,7 +51,10 @@ class LessonItem extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 10.0),
-                        child: Text('${index + 1}'),
+                        child: Text(
+                          '${index + 1}',
+                          style: const TextStyle(fontFamily: 'Yekan'),
+                        ),
                       ),
                     ],
                   ),

@@ -28,24 +28,30 @@ class CategoryButton extends StatelessWidget {
         left: 25.0,
         bottom: 15.0,
       ),
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(color: Colors.grey.shade300, blurRadius: 10.0),
+        ],
+      ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
+          elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(22.0),
           ),
         ),
         onPressed: () {
           switch (title) {
-            case 'روخوانی':
+            case 'آموزش روخوانی':
               ListLessonsScreen.title = 'آموزش روخوانی و روان خوانی';
               ListLessonsScreen.dataList = rookhaniDataList;
               break;
-            case 'تجوید':
+            case 'آموزش تجوید':
               ListLessonsScreen.title = 'آموزش قرائت قرآن کریم (تجوید)';
               ListLessonsScreen.dataList = tajvidDataList;
               break;
-            case 'حفظ':
+            case 'آموزش حفظ':
               ListLessonsScreen.title = 'آموزش گام به گام جزء 30  قرآن';
               ListLessonsScreen.dataList = hefzDataList;
               break;

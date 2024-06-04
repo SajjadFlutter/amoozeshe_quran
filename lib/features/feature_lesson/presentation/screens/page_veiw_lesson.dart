@@ -6,7 +6,8 @@ import 'lesson_screen.dart';
 class PageViewLesson extends StatelessWidget {
   PageViewLesson({super.key});
 
-  final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController =
+      PageController(initialPage: LessonScreen.lessonIndex);
 
   @override
   Widget build(BuildContext context) {

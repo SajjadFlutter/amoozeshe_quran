@@ -85,25 +85,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: iransans
+    - family: shabnam
       fonts:
-        - asset: assets/fonts/iransans.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+        - asset: assets/fonts/Shabnam.ttf
     - family: Nabi
       fonts:
         - asset: assets/fonts/Nabi.ttf
-    - family: Neirizi
-      fonts:
-        - asset: assets/fonts/Neirizi.ttf
-    - family: QuranTaha
-      fonts:
-        - asset: assets/fonts/QuranTaha.ttf
     - family: Yekan
       fonts:
         - asset: assets/fonts/Yekan.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

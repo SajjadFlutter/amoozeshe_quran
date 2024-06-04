@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyTheme {
   // light theme
   static final theme = ThemeData(
-    fontFamily: 'Yekan',
+    fontFamily: 'shabnam',
     textTheme: TextTheme(
       titleLarge: TextStyle(
         color: Colors.grey.shade800,
