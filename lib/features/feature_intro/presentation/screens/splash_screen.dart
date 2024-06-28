@@ -3,8 +3,25 @@ import 'package:flutter/material.dart';
 import '../../../../main.dart';
 import '../../../feature_home/presentation/screens/home_screen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        var route = MaterialPageRoute(builder: (context) => const HomeScreen());
+        Navigator.pushReplacement(context, route);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +34,6 @@ class SplashScreen extends StatelessWidget {
     // change color navbar status
     MyApp.changeColor(
         Colors.transparent, Brightness.light, primaryColor, Brightness.light);
-
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        var route = MaterialPageRoute(builder: (context) => const HomeScreen());
-        Navigator.pushReplacement(context, route);
-      },
-    );
     return Scaffold(
       backgroundColor: primaryColor,
       body: SizedBox(

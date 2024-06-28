@@ -107,11 +107,12 @@ class LessonItem extends StatelessWidget {
         title: const Text(
           "به اینترنت متصل نیستید!",
         ),
+        position: Alignment.center,
         description: const Text(
-          "لطفا برای دسترسی به این بخش به اینترنت متصل شوید.",
+          'لطفا اتصال خود به اینترنت را چک کنید...',
           style: TextStyle(fontSize: 12.0, color: Colors.grey),
         ),
-        dismissDirection: DismissDirection.down,
+        dismissDirection: DismissDirection.horizontal,
         width: width,
       ).show(context);
     }

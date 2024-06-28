@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../main.dart';
 import '../widgets/category_button.dart';
 import 'about_us_screen.dart';
+import 'contact_us_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -144,12 +146,10 @@ class GeneralButtons extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () async {
-                  // final Uri url =
-                  //     Uri.parse('https://eitaa.com/application_support_1');
-                  // if (!await launchUrl(url,
-                  //     mode: LaunchMode.externalApplication)) {
-                  //   throw 'Could not launch $url';
-                  // }
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ContactUsScreen(),
+                  );
+                  Navigator.push(context, route);
                 },
                 child: Container(
                   width: 65.0,
@@ -166,31 +166,44 @@ class GeneralButtons extends StatelessWidget {
                 ),
               ),
               const Text(
-                'پشتیبانی',
+                'ارتباط با ما',
                 style: TextStyle(fontSize: 14.0),
               ),
             ],
           ),
-          Column(
-            children: [
-              Container(
-                width: 65.0,
-                height: 65.0,
-                margin: const EdgeInsets.only(bottom: 10.0),
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(20.0)),
-                child: const Icon(
-                  Icons.share,
-                  size: 30.0,
-                  color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              showToast(
+                '...به زودی',
+                context: context,
+                animation: StyledToastAnimation.slideToBottom,
+                reverseAnimation: StyledToastAnimation.fade,
+                position: StyledToastPosition.bottom,
+                curve: Curves.easeIn,
+                reverseCurve: Curves.linear,
+              );
+            },
+            child: Column(
+              children: [
+                Container(
+                  width: 65.0,
+                  height: 65.0,
+                  margin: const EdgeInsets.only(bottom: 10.0),
+                  decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(20.0)),
+                  child: const Icon(
+                    Icons.share,
+                    size: 30.0,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              const Text(
-                'اشتراک گذاری',
-                style: TextStyle(fontSize: 14.0),
-              ),
-            ],
+                const Text(
+                  'اشتراک گذاری',
+                  style: TextStyle(fontSize: 14.0),
+                ),
+              ],
+            ),
           ),
           GestureDetector(
             onTap: () {

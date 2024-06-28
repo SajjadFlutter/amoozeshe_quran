@@ -7,26 +7,26 @@ class MyTheme {
     textTheme: TextTheme(
       titleLarge: TextStyle(
         color: Colors.grey.shade800,
-        fontSize: 22.0,
+        fontSize: 20.0,
         fontWeight: FontWeight.bold,
       ),
       titleMedium: TextStyle(
         color: Colors.grey.shade800,
-        fontSize: 18.0,
+        fontSize: 16.0,
         fontWeight: FontWeight.bold,
       ),
       labelLarge: const TextStyle(
         color: Colors.white,
-        fontSize: 18.0,
+        fontSize: 16.0,
         fontWeight: FontWeight.bold,
       ),
       labelMedium: TextStyle(
         color: Colors.grey.shade800,
-        fontSize: 16.0,
+        fontSize: 14.0,
       ),
       bodyMedium: TextStyle(
         color: Colors.grey.shade800,
-        fontSize: 16.0,
+        fontSize: 14.0,
       ),
     ),
     cardColor: Colors.white,

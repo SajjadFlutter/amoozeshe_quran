@@ -93,7 +93,8 @@ class _LessonScreenState extends State<LessonScreen> {
           children: [
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 10.0),
                 child: Column(
                   children: [
                     const SizedBox(height: 5.0),
@@ -197,6 +198,7 @@ class _LessonScreenState extends State<LessonScreen> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor,
+                            elevation: 0.0,
                             padding:
                                 const EdgeInsets.only(right: 20.0, left: 25.0),
                             shape: RoundedRectangleBorder(
@@ -236,6 +238,7 @@ class _LessonScreenState extends State<LessonScreen> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor,
+                            elevation: 0.0,
                             padding:
                                 const EdgeInsets.only(right: 25.0, left: 20.0),
                             shape: RoundedRectangleBorder(
