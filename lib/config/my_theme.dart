@@ -30,7 +30,7 @@ class MyTheme {
       ),
     ),
     cardColor: Colors.white,
-    primaryColor: const Color(0xFF008F3B),
+    primaryColor: const Color(0xFF5534a5),
     secondaryHeaderColor: Colors.grey.shade600,
     hintColor: Colors.grey.shade800,
   );

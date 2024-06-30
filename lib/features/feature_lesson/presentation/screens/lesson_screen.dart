@@ -62,6 +62,7 @@ class _LessonScreenState extends State<LessonScreen> {
 
     // device size
     var height = MediaQuery.of(context).size.height;
+    print(ListLessonsScreen.dataList[widget.index]['title']);
 
     return Scaffold(
       appBar: AppBar(
@@ -73,7 +74,9 @@ class _LessonScreenState extends State<LessonScreen> {
             ),
             const SizedBox(width: 10.0),
             Text(
-              '( ${ListLessonsScreen.title} )',
+              '( ${ListLessonsScreen.title} )'.length > 18
+                  ? '${'( ${ListLessonsScreen.title} )'.substring(0, 18)} ... )'
+                  : '( ${ListLessonsScreen.title} )',
               style: const TextStyle(color: Colors.white, fontSize: 14.0),
             ),
           ],
@@ -81,12 +84,12 @@ class _LessonScreenState extends State<LessonScreen> {
         backgroundColor: primaryColor,
       ),
       body: Container(
-        margin: const EdgeInsets.all(15.0),
+        margin: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [
-            BoxShadow(color: Colors.grey.shade100, blurRadius: 10.0),
+            BoxShadow(color: Colors.grey.shade300, blurRadius: 10.0),
           ],
         ),
         child: Stack(
@@ -192,25 +195,24 @@ class _LessonScreenState extends State<LessonScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 140.0,
-                        height: 48.0,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: primaryColor,
-                            elevation: 0.0,
-                            padding:
-                                const EdgeInsets.only(right: 20.0, left: 25.0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
+                      GestureDetector(
+                        onTap: () {
+                          if (widget.index != 0) {
+                            widget.pageController.jumpToPage(widget.index - 1);
+                          }
+                        },
+                        child: Container(
+                          width: 140.0,
+                          height: 48.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18.0),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF5534a5),
+                                Color(0xFF963AF8),
+                              ],
                             ),
                           ),
-                          onPressed: () {
-                            if (widget.index != 0) {
-                              widget.pageController
-                                  .jumpToPage(widget.index - 1);
-                            }
-                          },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -232,26 +234,25 @@ class _LessonScreenState extends State<LessonScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 140.0,
-                        height: 48.0,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: primaryColor,
-                            elevation: 0.0,
-                            padding:
-                                const EdgeInsets.only(right: 25.0, left: 20.0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
+                      GestureDetector(
+                        onTap: () {
+                          if (widget.index !=
+                              (ListLessonsScreen.dataList.length - 1)) {
+                            widget.pageController.jumpToPage(widget.index + 1);
+                          }
+                        },
+                        child: Container(
+                          width: 140.0,
+                          height: 48.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18.0),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF5534a5),
+                                Color(0xFF963AF8),
+                              ],
                             ),
                           ),
-                          onPressed: () {
-                            if (widget.index !=
-                                (ListLessonsScreen.dataList.length - 1)) {
-                              widget.pageController
-                                  .jumpToPage(widget.index + 1);
-                            }
-                          },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

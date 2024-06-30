@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../../main.dart';
 import '../../../feature_home/presentation/screens/home_screen.dart';
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 5),
       () {
         var route = MaterialPageRoute(builder: (context) => const HomeScreen());
         Navigator.pushReplacement(context, route);
@@ -35,8 +36,15 @@ class _SplashScreenState extends State<SplashScreen> {
     MyApp.changeColor(
         Colors.transparent, Brightness.light, primaryColor, Brightness.light);
     return Scaffold(
-      backgroundColor: primaryColor,
-      body: SizedBox(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF5534a5),
+              Color(0xFF963AF8),
+            ],
+          ),
+        ),
         width: width,
         height: height,
         child: Column(
@@ -48,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Image.asset(
                   'assets/images/qurane_karim.png',
-                  width: 250.0,
+                  width: 230.0,
                   color: Colors.white,
                 ),
                 const SizedBox(height: 35.0),
@@ -62,12 +70,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 30.0),
-              child: Text(
-                'لطفا صبر کنید...',
-                style: TextStyle(color: Colors.white),
-              ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 30.0),
+              child: LoadingAnimationWidget.hexagonDots(
+                  color: Colors.white, size: 38.0),
             ),
           ],
         ),

@@ -43,6 +43,7 @@ dependencies:
   chewie: ^1.7.5
   elegant_notification: ^1.14.0
   flutter_styled_toast: ^2.2.1
+  loading_animation_widget: ^1.2.1
 
 dev_dependencies:
   flutter_test:

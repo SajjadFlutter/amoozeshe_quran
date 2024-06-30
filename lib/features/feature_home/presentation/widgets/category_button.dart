@@ -19,56 +19,93 @@ class CategoryButton extends StatelessWidget {
     // var width = MediaQuery.of(context).size.width;
     // theme
     var textTheme = Theme.of(context).textTheme;
-    var primaryColor = Theme.of(context).primaryColor;
+    // var primaryColor = Theme.of(context).primaryColor;
 
-    return Container(
-      height: 65.0,
-      margin: const EdgeInsets.only(
-        right: 25.0,
-        left: 25.0,
-        bottom: 15.0,
-      ),
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(color: Colors.grey.shade300, blurRadius: 10.0),
-        ],
-      ),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: primaryColor,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(22.0),
+    return GestureDetector(
+      onTap: () {
+        switch (title) {
+          case 'آموزش روخوانی':
+            ListLessonsScreen.title = 'آموزش روخوانی و روان خوانی';
+            ListLessonsScreen.dataList = rookhaniDataList;
+            break;
+          case 'آموزش تجوید':
+            ListLessonsScreen.title = 'آموزش قرائت قرآن کریم (تجوید)';
+            ListLessonsScreen.dataList = tajvidDataList;
+            break;
+          case 'آموزش حفظ':
+            ListLessonsScreen.title = 'آموزش گام به گام جزء 30  قرآن';
+            ListLessonsScreen.dataList = hefzDataList;
+            break;
+          default:
+        }
+
+        var route = MaterialPageRoute(
+          builder: (context) => const ListLessonsScreen(),
+        );
+        Navigator.push(context, route);
+      },
+      child: Container(
+        height: 65.0,
+        margin: const EdgeInsets.only(
+          right: 25.0,
+          left: 25.0,
+          bottom: 15.0,
+        ),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(color: Colors.grey.shade300, blurRadius: 10.0),
+          ],
+          borderRadius: BorderRadius.circular(25.0),
+          // color: primaryColor,
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFF5534a5),
+              Color(0xFF963AF8),
+            ],
           ),
         ),
-        onPressed: () {
-          switch (title) {
-            case 'آموزش روخوانی':
-              ListLessonsScreen.title = 'آموزش روخوانی و روان خوانی';
-              ListLessonsScreen.dataList = rookhaniDataList;
-              break;
-            case 'آموزش تجوید':
-              ListLessonsScreen.title = 'آموزش قرائت قرآن کریم (تجوید)';
-              ListLessonsScreen.dataList = tajvidDataList;
-              break;
-            case 'آموزش حفظ':
-              ListLessonsScreen.title = 'آموزش گام به گام جزء 30  قرآن';
-              ListLessonsScreen.dataList = hefzDataList;
-              break;
-            default:
-          }
-
-          var route = MaterialPageRoute(
-            builder: (context) => const ListLessonsScreen(),
-          );
-          Navigator.push(context, route);
-        },
         child: Center(
           child: Text(
             title,
             style: textTheme.labelLarge,
           ),
         ),
+        // child: ElevatedButton(
+        //   style: ElevatedButton.styleFrom(
+        //     elevation: 0,
+        //     shape: RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(22.0),
+        //     ),
+        //   ),
+        //   onPressed: () {
+        //     switch (title) {
+        //       case 'آموزش روخوانی':
+        //         ListLessonsScreen.title = 'آموزش روخوانی و روان خوانی';
+        //         ListLessonsScreen.dataList = rookhaniDataList;
+        //         break;
+        //       case 'آموزش تجوید':
+        //         ListLessonsScreen.title = 'آموزش قرائت قرآن کریم (تجوید)';
+        //         ListLessonsScreen.dataList = tajvidDataList;
+        //         break;
+        //       case 'آموزش حفظ':
+        //         ListLessonsScreen.title = 'آموزش گام به گام جزء 30  قرآن';
+        //         ListLessonsScreen.dataList = hefzDataList;
+        //         break;
+        //       default:
+        //     }
+
+        //     var route = MaterialPageRoute(
+        //       builder: (context) => const ListLessonsScreen(),
+        //     );
+        //     Navigator.push(context, route);
+        //   },
+        //   child: Center(
+        //     child: Text(
+        //       title,
+        //       style: textTheme.labelLarge,
+        //     ),
+        //   ),
+        // ),
       ),
     );
   }

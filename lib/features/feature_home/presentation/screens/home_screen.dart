@@ -33,14 +33,22 @@ class HomeScreen extends StatelessWidget {
           Container(
             width: width,
             height: height,
-            color: primaryColor,
+            decoration: const BoxDecoration(
+              // color: primaryColor,
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFF5534a5),
+                  Color(0xFF963AF8),
+                ],
+              ),
+            ),
             child: Align(
               alignment: Alignment.topCenter,
               child: Padding(
-                padding: const EdgeInsets.only(top: 35.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 child: Image.asset(
                   'assets/images/qurane_karim.png',
-                  width: 230.0,
+                  width: 220.0,
                   color: Colors.white,
                 ),
               ),
@@ -66,10 +74,10 @@ class HomeScreen extends StatelessWidget {
                     'دوره های آموزش قرآن کریم',
                     style: TextStyle(
                       fontFamily: 'Nabi',
-                      fontSize: 22.0,
+                      fontSize: 21.0,
                     ),
                   ),
-                  const SizedBox(height: 30.0),
+                  const SizedBox(height: 26.0),
                   Column(
                     children: [
                       const CategoryButton(title: 'آموزش روخوانی'),
@@ -152,12 +160,18 @@ class GeneralButtons extends StatelessWidget {
                   Navigator.push(context, route);
                 },
                 child: Container(
-                  width: 65.0,
+                  width: 68.0,
                   height: 65.0,
                   margin: const EdgeInsets.only(bottom: 10.0),
                   decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(20.0)),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFF5534a5),
+                        Color(0xFF963AF8),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(22.0),
+                  ),
                   child: const Icon(
                     Icons.headset_mic_rounded,
                     size: 30.0,
@@ -174,7 +188,7 @@ class GeneralButtons extends StatelessWidget {
           GestureDetector(
             onTap: () {
               showToast(
-                '...به زودی',
+                '... به زودی',
                 context: context,
                 animation: StyledToastAnimation.slideToBottom,
                 reverseAnimation: StyledToastAnimation.fade,
@@ -186,11 +200,16 @@ class GeneralButtons extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  width: 65.0,
+                  width: 68.0,
                   height: 65.0,
                   margin: const EdgeInsets.only(bottom: 10.0),
                   decoration: BoxDecoration(
-                      color: primaryColor,
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xFF5534a5),
+                          Color(0xFF963AF8),
+                        ],
+                      ),
                       borderRadius: BorderRadius.circular(20.0)),
                   child: const Icon(
                     Icons.share,
@@ -215,11 +234,16 @@ class GeneralButtons extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  width: 65.0,
+                  width: 68.0,
                   height: 65.0,
                   margin: const EdgeInsets.only(bottom: 10.0),
                   decoration: BoxDecoration(
-                      color: primaryColor,
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xFF5534a5),
+                          Color(0xFF963AF8),
+                        ],
+                      ),
                       borderRadius: BorderRadius.circular(20.0)),
                   child: const Icon(
                     Icons.info_outline_rounded,
